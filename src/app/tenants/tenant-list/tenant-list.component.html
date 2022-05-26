@@ -1,0 +1,39 @@
+<!-- 
+<kendo-grid [data]="gridView"
+      [selectable]="true"
+      [pageSize]="pageSize"
+      [skip]="skip"
+      [pageable]="{buttonCount: 4, info: true, type: 'numeric', pageSizes: true, previousNext: true}"
+      [height]="500"
+      (pageChange)="pageChange($event)"
+      (edit)="editHandler($event)"
+      (remove)="removeHandler($event)"
+      (add)="addHandler($event)"
+    >
+  <kendo-grid-toolbar>
+    <button kendoGridAddCommand>Add new</button>
+  </kendo-grid-toolbar>
+  <kendo-grid-column  field="id" title="Id" [width]="110">
+  </kendo-grid-column>
+  <kendo-grid-column field="name" title="Name"  [width]="220">
+    <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+     
+      {{column.field}}
+    </ng-template>
+  </kendo-grid-column>
+          <kendo-grid-command-column title="command">
+            <ng-template kendoGridCellTemplate>
+                <button kendoGridEditCommand>Edit</button>
+                <button kendoGridRemoveCommand>Delete</button>
+            </ng-template>
+        </kendo-grid-command-column>
+
+        <div *kendoGridDetailTemplate="let dataItem">
+          <tenant-users-details [tenant]="dataItem"></tenant-users-details>
+        </div>
+</kendo-grid>
+<tenant-edit-form [model]="dataItemToEdit" (cancel)="cancelHandler($event)" (save)="onSave($event)">
+</tenant-edit-form>
+ -->
+
+ <div>Tanents List here ....!</div>

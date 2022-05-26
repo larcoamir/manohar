@@ -1,0 +1,170 @@
+.mdl-layout__header {
+  display: flex;
+  position: fixed;
+  background-color: #222;
+}
+
+.nav-link {
+  padding: 0 1em;
+  width: 100px;
+  color: rgba(255, 255, 255, .6);
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-link.router-link-active {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+.nav-link.router-link-active::after {
+  height: 3px;
+  width: 100%;
+  display: block;
+  content: " ";
+  bottom: 0;
+  left: 0;
+  position: inherit;
+  background: rgb(83, 109, 254);
+  background: rgb(255, 64, 129);
+}
+
+.md-title-icon>i {
+  /*background-image: url("assets/ng.png");*/
+  background-image: url("/assets/fdb.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 1em 3em;
+  /* background-color: #000000; */
+  background-size: 80px 40px;
+}
+
+.mdl-layout__header-row {
+  height: 56px;
+  padding: 0 16px 0 72px;
+  padding-left: 8px;
+  background-color: #673AB7;
+  background: #0033FF;
+  background-color: #222;
+}
+
+#reset-button {
+  position: fixed;
+  right: 2em;
+  top: 1em;
+}
+
+@media (max-width: 480px) {
+  #reset-button {
+    display: none
+  }
+}
+
+@media (max-width: 320px) {
+  a.nav-link {
+    font-size: 12px;
+  }
+}
+
+/* ///////////////// */
+
+
+.content {
+  margin-left: 12.5em;
+  background-color: white;
+  margin-right: 5px;
+  border: solid 1px #cbcbcb;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 0px 10px 10px 10px;
+  border-radius: 5px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 70px;
+  border-right: solid 1px #9a9696;
+}
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  color: #000000de;
+}
+
+.sidebar> a:first-child {
+  margin-top: 16px !important;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #7755c3;
+  /* background-color: #e6e3e3; */
+  /* border-radius: 30px;
+  padding-top: 10px; */
+}
+.active {
+  color: #7755c3 !important;
+  background-color: #e6e3e3;
+  border-radius: 30px;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 61px;
+    line-height: 43px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+.logo {
+  margin: -45px 0 0 7px;
+  position: absolute;
+  z-index: 9999;
+}
+
+.profile-pic {
+  float: right;
+  margin-top: -30px;
+  padding-right: 20px;
+  color: #7755c3;
+}
+
+.breadcrumbs{
+  padding-left: 16%;
+  margin-top: 13px;
+}
+
+::ng-deep b{
+  padding-top: 2px !important;
+}
+
+::ng-deep .xng-breadcrumb-link{
+  text-decoration: underline !important;
+}

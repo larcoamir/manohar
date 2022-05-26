@@ -1,0 +1,64 @@
+<article class="template animated slideInRight">
+    <mat-card class="mat-elevation-z0">
+        <mat-card-content>
+            <p>
+                <mat-label>Name</mat-label>
+                <mat-form-field floatLabel="never" appearance="legacy">
+                    <input matInput>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-label>Description</mat-label>
+                <mat-form-field floatLabel="never" appearance="legacy">
+                    <textarea matInput></textarea>
+                </mat-form-field>
+            </p>
+            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z0">
+                <mat-tab label="Permissions">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="position">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element">
+                                <a href="">Delete</a>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'outline'"
+                        [themeColor]="'info'">
+                        <i class="fa fa-plus"></i> Add Permission
+                    </button>
+                </mat-tab>
+                <mat-tab label="Metadata Properties"> Metadata Properties </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'" [themeColor]="'base'">
+                Cancel
+            </button>
+            <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'" [themeColor]="'primary'">
+                Save
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</article>

@@ -1,0 +1,62 @@
+<!-- <header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <a class="md-title-icon"><i></i></a>
+    <span class="mdl-layout-title">Identity Admin</span>
+
+  </div>
+  <div class="mdl-navigation">
+    <a *ngFor="let item of menuItems" [routerLink]="item.link" class="nav-link" routerLinkActive="router-link-active" href="">{{item.caption}}</a>
+    <div>
+    <a *ngIf="isExpired"class="pull-right" >Please Log In</a>
+  <a *ngIf="!isExpired" class="pull-right" > {{displayName}} </a>
+    </div>
+  </div>
+
+</header> -->
+
+
+<!-- <mat-toolbar color="primary" class="example-toolbar">
+	<h5 class="example-app-name"></h5>
+</mat-toolbar> -->
+<p>
+  <mat-toolbar>
+
+    <!-- <xng-breadcrumb class="breadcrumbs" [separator]="iconTemplate"></xng-breadcrumb>-->
+    <ng-template #iconTemplate>
+      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+    </ng-template>
+    <xng-breadcrumb [separator]="iconTemplate" id="titleCase" class="breadcrumbs">
+      <ng-container *xngBreadcrumbItem="let breadcrumb">
+        {{ breadcrumb | titlecase }}
+      </ng-container>
+    </xng-breadcrumb>
+
+  </mat-toolbar>
+  <span class="profile-pic">
+    <img src="../../../assets/fdb.png" width="30px" height="30px" alt="Logo"> Super Admin
+  </span>
+</p>
+<img src="../../../assets/fdb.png" width="80px" height="50px" class="logo" alt="Logo">
+<mat-sidenav-container class="example-container" autosize>
+
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()">
+    <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+      <div class="sidebar">
+        <a routerLink="/tenants" routerLinkActive="active"><b> Organizations </b></a>
+        <a routerLink="/claims" routerLinkActive="active"><b> Applications </b></a>
+        <a routerLink="/users" routerLinkActive="active"><b> All Users </b></a>
+
+      </div>
+
+    </mat-list-item>
+
+    <mat-nav-list>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- <div class="content">
+	<app-permission></app-permission>
+	</div> -->
+
+</mat-sidenav-container>
