@@ -5,7 +5,7 @@ import {
   GridComponent,
   AddEvent,
 } from '@progress/kendo-angular-grid';
-import { ClaimComponent } from '../claim/claim.component';
+import { ClaimComponent } from '../claims/claim.component';
 import { Claims } from '../shared/claims.model';
 import { ClaimsService } from '../shared/claims.service';
 

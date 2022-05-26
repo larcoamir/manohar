@@ -2,15 +2,15 @@
     <mat-card class="mat-elevation-z0">
         <mat-card-content>
             <p>
-                <mat-label>Name</mat-label>
-                <mat-form-field floatLabel="never" appearance="legacy">
+                <mat-label style="width: 20%;">Name</mat-label>
+                <mat-form-field style="margin-left: 30px;width: 80%;" floatLabel="never" appearance="legacy">
                     <input matInput>
                 </mat-form-field>
             </p>
             <p>
-                <mat-label>Description</mat-label>
-                <mat-form-field floatLabel="never" appearance="legacy">
-                    <textarea matInput></textarea>
+                <mat-label style="width: 20%;">Description</mat-label>
+                <mat-form-field style="margin-left: 30px;width: 80%;" floatLabel="never" appearance="legacy">
+                    <textarea matInput style="height: 40px; border: 1px solid lightgray;"></textarea>
                 </mat-form-field>
             </p>
             <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z0">
@@ -50,10 +50,15 @@
                     </button>
                 </mat-tab>
                 <mat-tab label="Metadata Properties"> Metadata Properties </mat-tab>
+
             </mat-tab-group>
+
         </mat-card-content>
+        <hr>
+
         <mat-card-actions align="end">
-            <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'" [themeColor]="'base'">
+            <button style="margin-right: 10px;" kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'"
+                [themeColor]="'base'">
                 Cancel
             </button>
             <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'" [themeColor]="'primary'">
