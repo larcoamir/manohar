@@ -14,6 +14,35 @@ import { Product } from './product.model';
     templateUrl: 'claim.component.html',
 })
 export class ClaimComponent {
+    public gridData = [
+        {
+            Position: 1,
+            Name: "Chai",
+            Action: '',
+        },
+        {
+            Position: 2,
+            Name: "Chai",
+            Action: '',
+        },
+    ];
+    public meta = [
+        {
+            index: 1,
+            name: 'alpha beta gama',
+            dataType: 'Numeric',
+            option: '',
+            action: ''
+        },
+        {
+            index: 2,
+            name: 'alpha beta gama',
+            dataType: 'Numeric',
+            option: '',
+            action: ''
+        }
+    ];
+    public listItems = ['One', 'Two']
     public view: Observable<GridDataResult>;
     public gridState: State = {
         sort: [],

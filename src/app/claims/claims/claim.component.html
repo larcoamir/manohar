@@ -1,5 +1,4 @@
 <article class="template animated slideInRight">
-
     <mat-card class="mat-elevation-z0">
         <mat-card-content>
             <p>
@@ -14,6 +13,70 @@
                     <textarea matInput style="height: 40px; border: 1px solid lightgray;"></textarea>
                 </mat-form-field>
             </p>
+            <kendo-tabstrip>
+                <kendo-tabstrip-tab title="Permissions">
+                    <ng-template kendoTabContent>
+                        <kendo-grid [data]="gridData">
+                            <kendo-grid-column field="Position" title="" [width]="20">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="Name" [width]="90">
+                                <ng-template kendoGridCellTemplate let-dataItem>
+                                    <input style="width: 100%; border-radius: 1px;" kendoTextBox [disabled]="true"
+                                        value="{{dataItem.Name}}" />
+                                </ng-template>
+                            </kendo-grid-column>
+                            <kendo-grid-column field="Action" title="" [width]="30">
+                                <ng-template kendoGridCellTemplate>
+                                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'link'"
+                                        [themeColor]="'primary'"> Delete
+                                    </button>
+                                </ng-template>
+                            </kendo-grid-column>
+                        </kendo-grid>
+                        <button style="margin-top: 10px;" kendoButton [size]="'medium'" [rounded]="'full'"
+                            [fillMode]="'outline'" [themeColor]="'info'">
+                            <i class="fa fa-plus"></i> Add a Permission
+                        </button>
+                    </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab title="Metadata Properties">
+                    <ng-template kendoTabContent>
+                        <kendo-grid [data]="meta">
+                            <kendo-grid-column field="index" title="" [width]="20">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="name" title="Name" [width]="30">
+                                <ng-template kendoGridCellTemplate let-dataItem>
+                                    <input style="width: 100%; border-radius: 1px;" kendoTextBox [disabled]="true"
+                                        value="{{dataItem.Name}}" />
+                                </ng-template>
+                            </kendo-grid-column>
+                            <kendo-grid-column field="dataType" title="Data Type" [width]="30">
+                                <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                                    <kendo-dropdownlist [data]="listItems" style="width: 100%; border-radius: 1px;">
+                                    </kendo-dropdownlist>
+                                </ng-template>
+                            </kendo-grid-column>
+                            <kendo-grid-column field="option" title="" [width]="30">
+                                <ng-template kendoGridCellTemplate>
+                                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'"
+                                        [themeColor]="'primary'">Option List</button>
+                                </ng-template>
+                            </kendo-grid-column>
+                            <kendo-grid-column field="action" title="" [width]="25">
+                                <ng-template kendoGridCellTemplate>
+                                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'link'"
+                                        [themeColor]="'primary'"> Delete
+                                    </button>
+                                </ng-template>
+                            </kendo-grid-column>
+                        </kendo-grid>
+                        <button style="margin-top: 10px;" kendoButton [size]="'medium'" [rounded]="'full'"
+                            [fillMode]="'outline'" [themeColor]="'info'">
+                            <i class="fa fa-plus"></i> Add a Property
+                        </button>
+                    </ng-template>
+                </kendo-tabstrip-tab>
+            </kendo-tabstrip>
             <kendo-tabstrip>
                 <kendo-tabstrip-tab title="Permissions">
                     <ng-template kendoTabContent>

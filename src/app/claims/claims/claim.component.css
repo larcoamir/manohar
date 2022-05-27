@@ -1,11 +1,9 @@
-.example-stretched-tabs {
-  max-width: 100%;
-}
 table {
   width: 100%;
   margin-bottom: 20px;
 }
-kendo-tabstrip p {
-  margin: 0;
-  padding: 8px;
+
+.k-button-text {
+  text-transform: lowercase;
+  text-transform: capitalize;
 }
