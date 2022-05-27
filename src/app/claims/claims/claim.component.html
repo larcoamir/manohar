@@ -1,4 +1,5 @@
 <article class="template animated slideInRight">
+
     <mat-card class="mat-elevation-z0">
         <mat-card-content>
             <p>
@@ -13,45 +14,75 @@
                     <textarea matInput style="height: 40px; border: 1px solid lightgray;"></textarea>
                 </mat-form-field>
             </p>
-            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z0">
-                <mat-tab label="Permissions">
-                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+            <kendo-tabstrip>
+                <kendo-tabstrip-tab title="Permissions">
+                    <ng-template kendoTabContent>
+                        <form novalidate #myForm="ngForm">
+                            <kendo-grid [data]="view | async" [height]="533" [pageSize]="gridState.take"
+                                [skip]="gridState.skip" [sort]="gridState.sort" [pageable]="true" [sortable]="true"
+                                (dataStateChange)="onStateChange($event)" (edit)="editHandler($event)"
+                                (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
+                                (remove)="removeHandler($event)" (add)="addHandler($event, myForm)" [navigable]="true">
+                                <ng-template kendoGridToolbarTemplate [position]="'bottom'">
+                                    <button kendoGridAddCommand type="button" kendoButton [size]="'medium'"
+                                        [rounded]="'full'" [fillMode]="'outline'" [themeColor]="'info'">
+                                        <i class="fa fa-plus"></i> Add Permission
+                                    </button>
+                                </ng-template>
+                                <kendo-grid-column field="ProductName" title="Product Name">
+                                    <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                                        <input [(ngModel)]="dataItem.ProductName" kendoGridFocusable name="ProductName"
+                                            class="k-textbox k-input k-rounded-md" required />
+                                    </ng-template>
+                                </kendo-grid-column>
+                                <kendo-grid-column field="UnitPrice" editor="numeric" title="Price">
+                                    <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                                        <input [(ngModel)]="dataItem.UnitPrice" kendoGridFocusable name="UnitPrice"
+                                            class="k-textbox k-input k-rounded-md" type="number" />
+                                    </ng-template>
+                                </kendo-grid-column>
+                                <kendo-grid-column field="Discontinued" editor="boolean" title="Discontinued">
+                                    <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                                        <input [(ngModel)]="dataItem.Discontinued" kendoGridFocusable
+                                            name="Discontinued" type="checkbox" />
+                                    </ng-template>
+                                </kendo-grid-column>
+                                <kendo-grid-column field="UnitsInStock" editor="numeric" title="Units In Stock">
+                                    <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                                        <input [(ngModel)]="dataItem.UnitsInStock" kendoGridFocusable
+                                            name="UnitsInStock" required min="0" max="99"
+                                            class="k-textbox k-input k-rounded-md" type="number" />
+                                    </ng-template>
+                                </kendo-grid-column>
+                                <kendo-grid-command-column title="command" [width]="220">
+                                    <ng-template kendoGridCellTemplate let-isNew="isNew">
+                                        <button kendoGridEditCommand type="button" [primary]="true">
+                                            Edit
+                                        </button>
+                                        <button kendoGridRemoveCommand type="button">Remove</button>
+                                        <button kendoGridSaveCommand type="button"
+                                            [disabled]="myForm.invalid || myForm.pristine">
+                                            {{ isNew ? "Add" : "Update" }}
+                                        </button>
+                                        <button kendoGridCancelCommand type="button">
+                                            {{ isNew ? "Discard changes" : "Cancel" }}
+                                        </button>
+                                    </ng-template>
+                                </kendo-grid-command-column>
+                            </kendo-grid>
+                        </form>
+                    </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab title="Metadata Properties">
+                    <ng-template kendoTabContent>
 
-                        <!--- Note that these columns can be defined in any order.
-                              The actual rendered columns are set as a property on the row definition" -->
-
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="position">
-                            <th mat-header-cell *matHeaderCellDef> </th>
-                            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                        </ng-container>
-
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="name">
-                            <th mat-header-cell *matHeaderCellDef> Name </th>
-                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                        </ng-container>
-
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="action">
-                            <th mat-header-cell *matHeaderCellDef> </th>
-                            <td mat-cell *matCellDef="let element">
-                                <a href="">Delete</a>
-                            </td>
-                        </ng-container>
-
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
-
-                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'outline'"
-                        [themeColor]="'info'">
-                        <i class="fa fa-plus"></i> Add Permission
-                    </button>
-                </mat-tab>
-                <mat-tab label="Metadata Properties"> Metadata Properties </mat-tab>
-
-            </mat-tab-group>
+                        <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'outline'"
+                            [themeColor]="'info'">
+                            <i class="fa fa-plus"></i> Add a Property
+                        </button>
+                    </ng-template>
+                </kendo-tabstrip-tab>
+            </kendo-tabstrip>
 
         </mat-card-content>
         <hr>

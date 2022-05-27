@@ -19,6 +19,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BreadcrumbModule } from "xng-breadcrumb";
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { AngularMaterialModule } from './angular-material.module';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 
@@ -37,7 +41,9 @@ import { AngularMaterialModule } from './angular-material.module';
     CoreModule,
     MatSidenavModule,
     BreadcrumbModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    LayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [authProviders, BreadcrumbService],
   bootstrap: [AppComponent]
