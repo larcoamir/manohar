@@ -14,15 +14,15 @@ import { SpinnerModule } from './spinner/spinner.module';
 import { ToastModule } from './toast/toast.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatListModule } from '@angular/material/list';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 import { BreadcrumbModule } from "xng-breadcrumb";
-import { AngularMaterialModule } from '../angular-material.module';
+import { AngularMaterialModule } from '../angular-material-module';
 
 // imports: imports the module's exports. which is usually declarables and providers
 // in our case the spinner has no providers.
@@ -30,9 +30,9 @@ import { AngularMaterialModule } from '../angular-material.module';
 // exports: exports modules AND components/directives/pipes that other modules may want to use
 @NgModule({
   imports: [
-    CommonModule, FormsModule, RouterModule, BreadcrumbModule,
+    CommonModule, FormsModule, RouterModule,BreadcrumbModule,
     ModalModule, SpinnerModule, ToastModule,
-    MatSidenavModule, BrowserAnimationsModule,
+    MatSidenavModule,BrowserAnimationsModule,
     AngularMaterialModule
   ],
   exports: [
@@ -47,7 +47,7 @@ import { AngularMaterialModule } from '../angular-material.module';
   ]
 })
 export class CoreModule {
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+  constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
     throwIfAlreadyLoaded(parentModule, 'CoreModule');
   }
 }

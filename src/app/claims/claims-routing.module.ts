@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClaimsListComponent } from './claims-list/claims-list.component';
-import { ClaimComponent } from './claims/claim.component';
+import { ClaimComponent } from './claim/claim.component';
 import { ClaimsComponent } from './claims.component';
 
 

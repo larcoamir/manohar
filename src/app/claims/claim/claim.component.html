@@ -1,0 +1,130 @@
+<article class="template animated slideInRight">
+    <mat-card class="mat-elevation-z0">
+        <mat-card-content>
+            <p>
+                <mat-label style="width: 20%;">Name</mat-label>
+                <mat-form-field style="margin-left: 9%;width: 80%;" floatLabel="never" appearance="legacy">
+                    <input matInput>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-label style="width: 20%;">Description</mat-label>
+                <mat-form-field style="margin-left: 5%;width: 80%;" floatLabel="never" appearance="legacy">
+                    <textarea matInput style="height: 40px; border: 1px solid lightgray;"></textarea>
+                </mat-form-field>
+            </p>
+            <mat-tab-group mat-stretch-tabs class="mat-elevation-z0">
+                <mat-tab label="Permissions">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="position">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element">
+                                <a href="">Delete</a>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'outline'"
+                        [themeColor]="'info'">
+                        <i class="fa fa-plus"></i> Add Permission
+                    </button>
+                </mat-tab>
+                <mat-tab label="Metadata Properties">
+                    <table mat-table [dataSource]="dataSourceMeta" class="mat-elevation-z0">
+
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="position">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element">
+                                <mat-form-field class="example-form-field" appearance="legacy">
+                                    <input matInput type="text" [disabled]="true" [value]="element.name">
+                                </mat-form-field>
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="dataType">
+                            <th mat-header-cell *matHeaderCellDef> Data Type </th>
+                            <td mat-cell *matCellDef="let element"> 
+                                
+                                <mat-form-field appearance="legacy">
+                                    <mat-select>
+                                      <mat-option value="One">
+                                        One
+                                      </mat-option>
+                                      <mat-option value="Two">
+                                        Two
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'"
+                                    [themeColor]="'info'">
+                                    <i class="fa fa-plus"></i> Option List
+                                </button>
+                                <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'link'"
+                                    [themeColor]="'primary'">
+                                    <i class="fa fa-plus"></i> Delete
+                                </button>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumnsMeta"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumnsMeta;"></tr>
+                    </table>
+
+                    <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'outline'"
+                        [themeColor]="'info'">
+                        <i class="fa fa-plus"></i> Add a Property
+                    </button>
+                </mat-tab>
+
+            </mat-tab-group>
+
+        </mat-card-content>
+        <hr>
+
+        <mat-card-actions>
+            <button style="margin-right: 10px;" kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'"
+                [themeColor]="'base'">
+                Cancel
+            </button>
+            <button kendoButton [size]="'medium'" [rounded]="'full'" [fillMode]="'solid'" [themeColor]="'primary'">
+                Save
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</article>

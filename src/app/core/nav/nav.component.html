@@ -20,12 +20,12 @@
 </mat-toolbar> -->
 <p>
   <mat-toolbar>
-
+    
     <!-- <xng-breadcrumb class="breadcrumbs" [separator]="iconTemplate"></xng-breadcrumb>-->
     <ng-template #iconTemplate>
-      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-    </ng-template>
-    <xng-breadcrumb [separator]="iconTemplate" id="titleCase" class="breadcrumbs">
+      <b>></b>  
+    </ng-template> 
+    <xng-breadcrumb  [separator]="iconTemplate" id="titleCase" class="breadcrumbs">
       <ng-container *xngBreadcrumbItem="let breadcrumb">
         {{ breadcrumb | titlecase }}
       </ng-container>

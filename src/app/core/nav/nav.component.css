@@ -120,7 +120,7 @@
 }
 .active {
   color: #7755c3 !important;
-  background-color: #e6e3e3;
+  background-color: #f6f1f1;
   border-radius: 30px;
 }
 
@@ -151,8 +151,8 @@
 
 .profile-pic {
   float: right;
-  margin-top: -30px;
-  padding-right: 20px;
+  margin-top: -45px;
+  padding-right: 35px;
   color: #7755c3;
 }
 
@@ -167,4 +167,11 @@
 
 ::ng-deep .xng-breadcrumb-link{
   text-decoration: underline !important;
+}
+
+::ng-deep p {
+  margin: 0 0 0px !important;
+}
+::ng-deep .mat-toolbar-single-row {
+  background-color: #fff;
 }

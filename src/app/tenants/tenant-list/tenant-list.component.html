@@ -36,4 +36,20 @@
 </tenant-edit-form>
  -->
 
- <div>Tanents List here ....!</div>
+ <div style="padding: 10px;">Tanents List: </div>
+
+ <kendo-grid [data]="gridData" style="height: 370px;">
+  <ng-template kendoGridToolbarTemplate>
+    <input
+      [style.width.px]="165"
+      placeholder="Search in all columns..."
+      kendoTextBox
+      (input)="onFilter($event)"
+    />
+    <kendo-grid-spacer></kendo-grid-spacer>
+  </ng-template>
+  <kendo-grid-column field="ProductName" title="Name">
+  </kendo-grid-column>
+  <kendo-grid-column field="Category.CategoryName" title="Actions" [width]="250">
+  </kendo-grid-column>
+</kendo-grid>

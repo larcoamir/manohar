@@ -34,11 +34,16 @@
 <tenant-edit-form [model]="dataItemToEdit" (cancel)="cancelHandler($event)" (save)="onSave($event)">
 </tenant-edit-form>
  -->
+ <div style="padding: 10px;">Applications List: 
+  <a [routerLink]="['/claims', 'new']" style="padding-left: 70%;"><button
+  class="story-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: white !important;background-color: #7755c3;border-radius: 30px;">Add Application</button></a>
+</div>
 
-
-
-
-
-
-<a href="" [routerLink]="['/claims', 'new']"><button
-    class="story-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Add</button></a>
+ <kendo-grid [data]="gridData" style="height: 370px;">
+  <!-- <kendo-grid-column field="ProductID" title="ID" [width]="40">
+  </kendo-grid-column> -->
+  <kendo-grid-column field="ProductName" title="Name">
+  </kendo-grid-column>
+  <kendo-grid-column field="Category.CategoryName" title="Actions" [width]="250">
+  </kendo-grid-column>
+</kendo-grid>
