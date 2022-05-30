@@ -8,21 +8,16 @@ import { AppComponent } from './app.component';
 
 import { PageNotFoundComponent } from './page-not-found.component';
 import { SplashScreenComponent } from './splash-screen.component';
-import { LoginComponent } from './login/login.component';
-import { AuthService } from './services/auth.service';
+import { LoginComponent} from './login/login.component';
+import{AuthService} from './services/auth.service';
 //import { UserService } from './shared/services/user.service';
 
 // from slt
 import { CoreModule } from './core/core.module';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { BreadcrumbModule } from "xng-breadcrumb";
 import { BreadcrumbService } from 'xng-breadcrumb';
-import { AngularMaterialModule } from './angular-material.module';
-import { LayoutModule } from '@progress/kendo-angular-layout';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 
 
 
@@ -40,10 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     CoreModule,
     MatSidenavModule,
-    BreadcrumbModule,
-    AngularMaterialModule,
-    LayoutModule,
-    BrowserAnimationsModule
+    BreadcrumbModule
   ],
   providers: [authProviders, BreadcrumbService],
   bootstrap: [AppComponent]

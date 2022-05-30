@@ -2,3 +2,17 @@
 //@import "~@progress/kendo-theme-default/scss/all.scss";
 @import "~@progress/kendo-theme-material/dist/all.css";
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+// .mat-tab-label-container{
+//     border-bottom: 5px solid black !important;
+//   }
+
+  // .mat-tab-label{
+  //   border: 1px solid gray !important;
+  // }
+
+  .mat-card{
+    background-color: white;
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
